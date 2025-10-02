@@ -1,0 +1,25 @@
+/* assets/css/styles.css - gaya sederhana */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #f8f9fa;
+  color: #212529;
+  padding-bottom: 40px;
+}
+
+.hero {
+  background: linear-gradient(90deg, rgba(0,123,255,0.06), rgba(0,123,255,0.02));
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+@media (min-width: 992px) {
+  main.container {
+    max-width: 960px;
+  }
+}
