@@ -1,25 +1,58 @@
-/* assets/css/styles.css - gaya sederhana */
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: #f8f9fa;
-  color: #212529;
-  padding-bottom: 40px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #333;
 }
 
-.hero {
-  background: linear-gradient(90deg, rgba(0,123,255,0.06), rgba(0,123,255,0.02));
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 10px;
 }
 
-.navbar-brand {
-  font-weight: 600;
+header h1 {
+  margin: 0;
 }
 
-footer a {
+nav ul {
+  display: flex;
+  list-style: none;
+  background: #34495e;
+  padding: 10px;
+  margin: 0;
+}
+
+nav ul li {
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: white;
   text-decoration: none;
 }
 
-@media (min-width: 992px) {
-  main.container {
-    max-width: 960px;
-  }
+nav ul li a:hover,
+nav ul li a.active {
+  color: #f39c12;
+}
+
+.hero {
+  background: url("img/hero.jpg") center/cover no-repeat;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+.hero .btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #f39c12;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }

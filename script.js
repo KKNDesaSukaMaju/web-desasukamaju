@@ -1,43 +1,29 @@
-// assets/js/main.js
-document.addEventListener('DOMContentLoaded', () => {
+// JAM DIGITAL
+function updateJam() {
+  const sekarang = new Date();
+  document.getElementById("jam").innerText = sekarang.toLocaleTimeString();
+}
+setInterval(updateJam, 1000);
 
-  function includeHTML(selector, url) {
-    const el = document.querySelector(selector);
-    if (!el) return Promise.resolve();
-    return fetch(url)
-      .then(response => {
-        if (!response.ok) throw new Error('Failed to load ' + url);
-        return response.text();
-      })
-      .then(html => {
-        el.innerHTML = html;
-      })
-      .catch(err => {
-        console.warn(err);
-      });
+// SLIDER FOTO
+let index = 0;
+const gambar = ["img/kegiatan1.jpg", "img/kegiatan2.jpg", "img/kegiatan3.jpg"];
+function gantiGambar() {
+  index = (index + 1) % gambar.length;
+  document.getElementById("slider").innerHTML = `<img src="${gambar[index]}" alt="Kegiatan">`;
+}
+setInterval(gantiGambar, 3000); // ganti tiap 3 detik
+
+// CEK FORM KONTAK
+function cekForm() {
+  let nama = document.getElementById("nama").value;
+  let email = document.getElementById("email").value;
+  let pesan = document.getElementById("pesan").value;
+
+  if(nama === "" || email === "" || pesan === "") {
+    alert("Semua kolom harus diisi!");
+    return false;
   }
-
-  // muat header & footer (keduanya relatif terhadap lokasi file)
-  const headerPromise = includeHTML('#site-header', 'header.html');
-  const footerPromise = includeHTML('#site-footer', 'footer.html');
-
-  // setelah header dimuat, atur link aktif
-  headerPromise.then(() => {
-    const path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('#site-header a.nav-link').forEach(a => {
-      // cocokkan dengan nama file akhir (index.html, profil-desa.html, dsb.)
-      const href = a.getAttribute('href');
-      if (!href) return;
-      if (href === path || (href === 'index.html' && path === '')) {
-        a.classList.add('active');
-      }
-    });
-  });
-
-  // fallback kecil jika footer tidak menampilkan tahun
-  footerPromise.then(() => {
-    const y = new Date().getFullYear();
-    document.querySelectorAll('#site-footer #year').forEach(el => el.textContent = y);
-  });
-
-});
+  alert("Pesan berhasil dikirim!");
+  return true;
+}
