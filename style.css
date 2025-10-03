@@ -37,7 +37,9 @@ nav ul li a.active {
   color: #f39c12;
 }
 
+/* Hero Section */
 .hero {
+  position: relative;
   background: url("img/hero.jpg") center/cover no-repeat;
   height: 250px;
   display: flex;
@@ -45,9 +47,24 @@ nav ul li a.active {
   justify-content: center;
   align-items: center;
   color: white;
+  text-align: center;
   text-shadow: 2px 2px 5px black;
 }
 
+/* Overlay Gelap */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4); /* bisa ubah angka 0.4 untuk lebih gelap/terang */
+}
+
+/* Supaya teks dan tombol tetap muncul di atas overlay */
+.hero h2, .hero p, .hero .btn {
+  position: relative;
+}
+
+/* Tombol */
 .hero .btn {
   margin-top: 10px;
   padding: 8px 15px;
