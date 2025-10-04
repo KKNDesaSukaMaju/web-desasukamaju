@@ -1,22 +1,22 @@
-/* Reset dasar */
-* {
+/* ===== Umum ===== */
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* Navigasi */
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(0, 30, 60, 0.9);
+/* ===== Header / Navigasi ===== */
+header {
+  background-color: #0e2b4d;
   color: white;
-  padding: 10px 40px;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
+  padding: 10px 0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -26,88 +26,111 @@
 
 .logo img {
   width: 50px;
-  height: 50px;
   margin-right: 10px;
 }
 
-.logo h1 {
+.judul h1 {
   font-size: 20px;
-  margin-bottom: 2px;
+  margin: 0;
 }
 
-.logo p {
-  font-size: 12px;
-  color: #ddd;
+.judul p {
+  margin: 0;
+  font-size: 13px;
 }
 
-.menu {
+nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-.menu li a {
+nav a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
 }
 
-.menu li a.active,
-.menu li a:hover {
-  color: #5cc0ff;
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
+/* ===== Dropdown ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  color: black;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  top: 30px;
+  border-radius: 5px;
+}
+
+.dropdown-menu li {
+  margin: 5px 0;
+}
+
+.dropdown-menu a {
+  color: black;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ===== Hero Section ===== */
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url("gambar/gambar-pemandangan-hd7.jpg");
+  background-image: url("gambar/gambar-pemandangan-hd7.jpg"); /* pastikan ini benar */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.hero::before {
-  content: "";
+.overlay {
   position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* jangan 0.8 karena terlalu gelap */
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* overlay gelap */
 }
-
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
-  padding: 20px;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.hero-content h2 {
+.hero-content h1 {
   font-size: 48px;
-  line-height: 1.3;
   margin-bottom: 20px;
 }
 
 .hero-content p {
-  font-size: 18px;
-  margin-bottom: 25px;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
 .btn {
-  background-color: #2a90ff;
+  background-color: #2196f3;
   color: white;
-  padding: 12px 25px;
-  border-radius: 8px;
+  padding: 10px 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
 }
-
-.btn:hover {
-  background-color: #1a7dd8;
-}
-
-
-
-
-
-
