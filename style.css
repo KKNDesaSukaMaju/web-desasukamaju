@@ -66,14 +66,14 @@
   background-repeat: no-repeat;
 }
 
-/* Overlay gelap agar teks lebih jelas */
 .hero::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* jangan 0.8 karena terlalu gelap */
+  z-index: 1;
 }
+
 
 .hero-content {
   position: relative;
@@ -105,6 +105,7 @@
 .btn:hover {
   background-color: #1a7dd8;
 }
+
 
 
 
